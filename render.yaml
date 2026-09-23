@@ -1,0 +1,12 @@
+# One-click deploy on Render: New + → Blueprint → pick this repo.
+# Render injects PORT automatically; server.js already reads process.env.PORT.
+services:
+  - type: web
+    name: sur-sangraam
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
